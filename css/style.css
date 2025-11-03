@@ -1,0 +1,849 @@
+:root {
+    --infront-red: #E4002B; /* Infront Logo Rot */
+}
+
+/* Reset und Grundstile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #666;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo-image {
+    height: 40px; /* Passe die Höhe nach Bedarf an */
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Hero Styles */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.secondary-button .icon {
+    stroke: white;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 42rem;
+}
+
+.main-title {
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: normal;
+    letter-spacing: -0.02em;
+}
+
+.highlight-text {
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.animated-text-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 1.2em;
+    margin-top: 0.5rem;
+}
+
+.animated-text {
+    position: absolute;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease;
+    color: var(--infront-red);
+}
+
+.animated-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 44rem;
+    margin: 1.5rem auto;
+}
+
+/* Gemeinsame Button Styles */
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Outline Button (Jump on a call) */
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.outline-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Primary Button (Sign up here) */
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: transparent;    /* Geändert zu transparent */
+    border: 1px solid white;   /* Weißer Border */
+    border-radius: 0.5rem;
+    color: white;              /* Weißer Text */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Icons in den Buttons */
+.outline-button .icon,
+.primary-button .icon {
+    width: 1rem;
+    height: 1rem;
+    stroke: white;
+}
+
+/* About Section */
+.about {
+    min-height: 80vh;          /* Volle Viewport-Höhe */
+    display: flex;              /* Flexbox für vertikale Zentrierung */
+    align-items: center;        /* Vertikale Zentrierung */
+    justify-content: center;    /* Horizontale Zentrierung */
+    background-color: white;
+    padding: 2rem 0;
+}
+
+.about .container {
+    max-width: 800px;          /* Schmaler als standard container */
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;        /* Text zentrieren */
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #333000;        /* Geändert von var(--infront-red) zu schwarz */
+    font-weight: bold;     /* Optional: für bessere Lesbarkeit */
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 600px;          /* Noch schmalerer Textblock */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Video Container anpassen */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;    /* 16:9 Aspect Ratio */
+    height: 0;
+    max-width: 800px;          /* Maximale Breite des Videos */
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Team Section */
+.team {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: #333000;        /* Geändert von var(--infront-red) zu schwarz */
+    font-weight: bold;     /* Optional: für bessere Lesbarkeit */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;                /* Mehr Abstand zwischen den Karten */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team-member {
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.member-image {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Behält Bildverhältnis bei und füllt Container */
+}
+
+.team-member h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.team-member .position {
+    font-size: 1.2rem;
+    color: var(--infront-red);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.team-member .department {
+    font-size: 1rem;
+    color: #6c757d;
+
+    text-align: left;
+}
+
+.team-member .bio {
+    margin-bottom: 15px;
+    text-align: left;
+
+}
+
+/* LinkedIn Button */
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;                    /* Noch kleinerer Abstand zwischen Icon und Text */
+    background: transparent;
+    border: none !important;
+    border-radius: 0.4rem;          /* Etwas kleinerer Border-Radius */
+    color: #666;                    /* Schwarzer Text */         /* Noch kleinere Schrift */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.linkedin-button:hover {
+    background: rgba(0, 0, 0, 0.05); /* Sehr dezenter Hover-Effekt */
+}
+
+.linkedin-button .icon {
+    width: 0.8rem;                  /* Noch kleineres Icon */
+    height: 0.8rem;
+    color: #333;                    /* Schwarzes Icon */
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 15px 30px;
+    background-color: var(--infront-red);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #c40026;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000000;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.footer-links a:hover {
+    color: var(--infront-red);
+}
+
+.footer-copyright {
+    color: #ffffff;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .footer-copyright {
+        margin: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        gap: 1rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3.5rem;
+    }
+    
+    .description {
+        font-size: 1.25rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-links a,
+    .social-links a {
+        margin: 0 10px;
+    }
+}
+
+/* Neue Klasse für versteckte Navbar */
+.navbar--hidden {
+    transform: translateY(-100%);
+}
+
+/* Links Hover Effect */
+.nav-links a:hover {
+    color: var(--infront-red);
+}
+
+/* Social Links Hover */
+.social-links a:hover {
+    color: var(--infront-red);
+}
+
+.download-section {
+    background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.download-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Stärkere Abdunklung für besseren Kontrast */
+}
+
+.download-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    color: white;
+    z-index: 1; /* Stellt sicher, dass der Content über dem Overlay liegt */
+}
+
+.download-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #E6001E; /* Infront Rot */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #b30017; /* Dunkleres Rot beim Hover */
+}
+
+/* Responsive Anpassung für mobile Geräte */
+@media (max-width: 768px) {
+    .download-container h2 {
+        font-size: 2.5em; /* Etwas kleiner auf mobilen Geräten */
+    }
+}
+
+.team h2,
+.download-container h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white; /* Für die Download-Section */
+}
+
+/* Die Download-Section h2 behält seinen weißen Text wegen des dunklen Hintergrunds */
+.team h2 {
+    color: #222; /* oder Ihre ursprüngliche Textfarbe für die Team-Section */
+}
+
+.red {
+    background-color: var(--infront-red);
+    border: none;
+}
+
+.red:hover {
+    background-color: #c40026;
+}
+
+.more-section {
+    background-color: #f5f5f5;
+    padding: 120px 0; /* Erhöht von 20px auf 120px */
+}
+
+.more-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.more-section h3 {
+    color: var(--infront-red);
+}
+
+
+.teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 60px auto; /* Zusätzlicher Abstand oben und unten vom Grid */
+    padding: 0;
+}
+
+.teaser-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.teaser-item:hover {
+    transform: translateY(-5px);
+}
+
+.teaser-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+    margin-bottom: 15px;
+}
+
+.teaser-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teaser-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.teaser-item p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .teaser-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .teaser-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.typewriter {
+    color: white;
+    font-size: 3em;
+    position: relative;
+}
+
+.cursor {
+    animation: blink 0.75s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.highlight {
+    color: #E6001E; /* Infront Rot */
+}
+.typewriter-text {
+    border-right: none;
+}
+
+
+.typewriter-section {
+    background-image: url('https://images.unsplash.com/photo-1471295253337-3ceaaedca402?q=80&w=2668&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.typewriter-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 0.5rem;
+    animation: scroll 20s linear infinite;
+    width: fit-content;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 6)); /* Breite * Anzahl der Logos */
+    }
+}
+
+/* Dupliziere die Logos für nahtlosen Loop */
+.carousel-track::before,
+.carousel-track::after {
+    content: "";
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-track::before {
+    animation: scroll 20s linear infinite;
+    animation-delay: -10s;
+}
+
+.carousel-track::after {
+    animation: scroll 20s linear infinite;
+    animation-delay: -20s;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05);
+}
