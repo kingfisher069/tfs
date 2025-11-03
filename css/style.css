@@ -1,5 +1,5 @@
 :root {
-    --infront-red: #E4002B; /* Infront Logo Rot */
+    --fcb-red: #ED0037; /* Logo Rot */
 }
 
 /* Reset und Grundstile */
@@ -106,7 +106,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 
@@ -178,7 +178,7 @@ body {
     opacity: 0;
     transform: translateY(100%);
     transition: all 0.5s ease;
-    color: var(--infront-red);
+    color: var(--fcb-red);
 }
 
 .animated-text.active {
@@ -270,7 +270,7 @@ body {
 .about h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
-    color: #333000;        /* Geändert von var(--infront-red) zu schwarz */
+    color: #333000;        /* Geändert von var(--fcb-red) zu schwarz */
     font-weight: bold;     /* Optional: für bessere Lesbarkeit */
 }
 
@@ -311,7 +311,7 @@ body {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 4rem;
-    color: #333000;        /* Geändert von var(--infront-red) zu schwarz */
+    color: #333000;        /* Geändert von var(--fcb-red) zu schwarz */
     font-weight: bold;     /* Optional: für bessere Lesbarkeit */
 }
 
@@ -353,7 +353,7 @@ body {
 
 .team-member .position {
     font-size: 1.2rem;
-    color: var(--infront-red);
+    color: var(--fcb-red);
     margin-bottom: 0.5rem;
     text-align: left;
 }
@@ -429,7 +429,7 @@ body {
 
 .submit-button {
     padding: 15px 30px;
-    background-color: var(--infront-red);
+    background-color: var(--fcb-red);
     color: white;
     border: none;
     border-radius: 5px;
@@ -481,7 +481,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--infront-red);
+    color: var(--fcb-red);
 }
 
 .footer-copyright {
@@ -556,12 +556,12 @@ body {
 
 /* Links Hover Effect */
 .nav-links a:hover {
-    color: var(--infront-red);
+    color: var(--fcb-red);
 }
 
 /* Social Links Hover */
 .social-links a:hover {
-    color: var(--infront-red);
+    color: var(--fcb-red);
 }
 
 .download-section {
@@ -614,7 +614,7 @@ body {
 .download-btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #E6001E; /* Infront Rot */
+    background-color: #E6001E; /* Rot */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -646,7 +646,7 @@ body {
 }
 
 .red {
-    background-color: var(--infront-red);
+    background-color: var(--fcb-red);
     border: none;
 }
 
@@ -666,7 +666,7 @@ body {
 }
 
 .more-section h3 {
-    color: var(--infront-red);
+    color: var(--fcb-red);
 }
 
 
@@ -744,7 +744,7 @@ body {
 }
 
 .highlight {
-    color: #E6001E; /* Infront Rot */
+    color: #E6001E; /* Rot */
 }
 .typewriter-text {
     border-right: none;
