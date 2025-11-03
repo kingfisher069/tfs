@@ -47,9 +47,17 @@ body {
 }
 
 .logo-image {
-    height: 40px; /* Passe die Höhe nach Bedarf an */
+    float: left;
+    height: 50px; /* Passe die Höhe nach Bedarf an */
     width: auto;
     display: block;
+}
+
+.client {
+    font-size: 1.125rem;
+    font-weight: 600;
+    float: left;
+    margin: 0.5em 0 0 1.5em;
 }
 
 .nav-links {
